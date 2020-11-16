@@ -1,0 +1,27 @@
+Description: fix test timing on slow builders such as riscv64
+Author: Marc Deslauriers <marc.deslauriers@canonical.com>
+
+--- a/tests/data/ppolicy.ldif
++++ b/tests/data/ppolicy.ldif
+@@ -25,7 +25,7 @@ pwdLockoutDuration: 15
+ pwdInHistory: 6
+ pwdCheckQuality: 2
+ pwdExpireWarning: 10
+-pwdMaxAge: 30
++pwdMaxAge: 40
+ pwdMinLength: 5
+ pwdGraceAuthnLimit: 3
+ pwdAllowUserChange: TRUE
+--- a/tests/scripts/test022-ppolicy
++++ b/tests/scripts/test022-ppolicy
+@@ -100,8 +100,8 @@ if test $RC != 0 ; then
+ fi
+ 
+ echo "Testing password expiration"
+-echo "Waiting 20 seconds for password to expire..."
+-sleep 20
++echo "Waiting 40 seconds for password to expire..."
++sleep 40
+ 
+ $LDAPSEARCH -e ppolicy -h $LOCALHOST -p $PORT1 -D "$USER" -w $PASS \
+ 	-b "$BASEDN" -s base > $SEARCHOUT 2>&1

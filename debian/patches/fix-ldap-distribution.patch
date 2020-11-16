@@ -1,0 +1,24 @@
+--- a/build/mkversion
++++ b/build/mkversion
+@@ -52,6 +52,12 @@
+ APPLICATION=$1
+ WHOWHERE="Debian OpenLDAP Maintainers <pkg-openldap-devel@lists.alioth.debian.org>"
+ 
++if test -x /usr/bin/lsb_release; then
++    OPENLDAP_DISTRIBUTION=" ($(lsb_release -si))"
++else
++    OPENLDAP_DISTRIBUTION=""
++fi
++
+ cat << __EOF__
+ /* This work is part of OpenLDAP Software <http://www.openldap.org/>.
+  *
+@@ -72,7 +78,7 @@
+ "COPYING RESTRICTIONS APPLY\n";
+ 
+ $static $const char $SYMBOL[] =
+-"@(#) \$$PACKAGE: $APPLICATION $VERSION (" __DATE__ " " __TIME__ ") \$\n"
++"@(#) \$$PACKAGE: $APPLICATION $VERSION$OPENLDAP_DISTRIBUTION (" __DATE__ " " __TIME__ ") \$\n"
+ "\t$WHOWHERE\n";
+ 
+ __EOF__
