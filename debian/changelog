@@ -1,3 +1,9 @@
+openldap (2.4.49+dfsg-2ubuntu1.5bb1) focal; urgency=medium
+
+  * Balabit patched version
+
+ -- Balabit Platform Team <devnull@dev.null>  Sat, 19 Dec 2020 03:07:11 +0100
+
 openldap (2.4.49+dfsg-2ubuntu1.5) focal-security; urgency=medium
 
   * SECURITY UPDATE: assertion failure in Certificate List syntax
