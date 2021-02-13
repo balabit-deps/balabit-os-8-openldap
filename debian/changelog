@@ -1,3 +1,55 @@
+openldap (2.4.49+dfsg-2ubuntu1.6) focal-security; urgency=medium
+
+  * SECURITY UPDATE: integer underflow in Certificate Exact Assertion
+    processing
+    - debian/patches/CVE-2020-36221-1.patch: fix serialNumberAndIssuerCheck
+      in servers/slapd/schema_init.c.
+    - debian/patches/CVE-2020-36221-2.patch: fix serialNumberAndIssuerCheck
+      in servers/slapd/schema_init.c.
+    - CVE-2020-36221
+  * SECURITY UPDATE: assert failure in saslAuthzTo validation
+    - debian/patches/CVE-2020-36222-1.patch: remove saslauthz asserts in
+      servers/slapd/saslauthz.c.
+    - debian/patches/CVE-2020-36222-2.patch: fix debug msg in
+      servers/slapd/saslauthz.c.
+    - CVE-2020-36222
+  * SECURITY UPDATE: crash in Values Return Filter control handling
+    - debian/patches/CVE-2020-36223.patch: fix vrfilter double-free in
+      servers/slapd/controls.c.
+    - CVE-2020-36223
+  * SECURITY UPDATE: DoS in saslAuthzTo processing
+    - debian/patches/CVE-2020-36224-1.patch: use ch_free on normalized DN
+      in servers/slapd/saslauthz.c.
+    - debian/patches/CVE-2020-36224-2.patch: use slap_sl_free in prev
+      commit in servers/slapd/saslauthz.c.
+    - CVE-2020-36224
+  * SECURITY UPDATE: DoS in saslAuthzTo processing
+    - debian/patches/CVE-2020-36225.patch: fix AVA_Sort on invalid RDN in
+      servers/slapd/dn.c.
+    - CVE-2020-36225
+  * SECURITY UPDATE: DoS in saslAuthzTo processing
+    - debian/patches/CVE-2020-36226.patch: fix slap_parse_user in
+      servers/slapd/saslauthz.c.
+    - CVE-2020-36226
+  * SECURITY UPDATE: infinite loop in cancel_extop Cancel operation
+    - debian/patches/CVE-2020-36227.patch: fix cancel exop in
+      servers/slapd/cancel.c.
+    - CVE-2020-36227
+  * SECURITY UPDATE: DoS in Certificate List Exact Assertion processing
+    - debian/patches/CVE-2020-36228.patch: fix issuerAndThisUpdateCheck in
+      servers/slapd/schema_init.c.
+    - CVE-2020-36228
+  * SECURITY UPDATE: DoS in X.509 DN parsing in ad_keystring
+    - debian/patches/CVE-2020-36229.patch: add more checks to
+      ldap_X509dn2bv in libraries/libldap/tls2.c.
+    - CVE-2020-36229
+  * SECURITY UPDATE: DoS in X.509 DN parsing in ber_next_element
+    - debian/patches/CVE-2020-36230.patch: check for invalid BER after RDN
+      count in libraries/libldap/tls2.c.
+    - CVE-2020-36230
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Tue, 02 Feb 2021 11:06:34 -0500
+
 openldap (2.4.49+dfsg-2ubuntu1.5bb1) focal; urgency=medium
 
   * Balabit patched version
