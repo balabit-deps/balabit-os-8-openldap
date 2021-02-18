@@ -1,3 +1,12 @@
+openldap (2.4.49+dfsg-2ubuntu1.7) focal-security; urgency=medium
+
+  * SECURITY UPDATE: DoS via malicious packet
+    - debian/patches/CVE-2021-27212.patch: fix issuerAndThisUpdateCheck in
+      servers/slapd/schema_init.c.
+    - CVE-2021-27212
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Thu, 18 Feb 2021 09:22:15 -0500
+
 openldap (2.4.49+dfsg-2ubuntu1.6) focal-security; urgency=medium
 
   * SECURITY UPDATE: integer underflow in Certificate Exact Assertion
