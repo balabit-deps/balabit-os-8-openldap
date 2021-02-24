@@ -1,3 +1,9 @@
+openldap (2.4.49+dfsg-2ubuntu1.7bb1) focal; urgency=medium
+
+  * Balabit patched version
+
+ -- Balabit Platform Team <devnull@dev.null>  Wed, 24 Feb 2021 20:42:38 +0100
+
 openldap (2.4.49+dfsg-2ubuntu1.7) focal-security; urgency=medium
 
   * SECURITY UPDATE: DoS via malicious packet
