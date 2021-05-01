@@ -1,3 +1,11 @@
+openldap (2.4.49+dfsg-2ubuntu1.8) focal; urgency=medium
+
+  * d/p/ITS-8650-loop-on-incomplete-TLS-handshake.patch:
+    Import upstream patch to properly retry gnutls_handshake() after it
+    returns GNUTLS_E_AGAIN. (ITS#8650) (LP: #1921562)
+
+ -- Utkarsh Gupta <utkarsh.gupta@canonical.com>  Thu, 08 Apr 2021 09:52:01 +0530
+
 openldap (2.4.49+dfsg-2ubuntu1.7bb1) focal; urgency=medium
 
   * Balabit patched version
