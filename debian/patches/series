@@ -43,3 +43,4 @@ CVE-2020-36230.patch
 CVE-2020-36229.patch
 CVE-2021-27212.patch
 ITS-8650-loop-on-incomplete-TLS-handshake.patch
+CVE-2022-29155.patch
